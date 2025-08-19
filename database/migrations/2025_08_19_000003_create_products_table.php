@@ -10,6 +10,7 @@ return new class extends Migration {
             $table->string('name', 200);
             $table->string('slug', 220)->unique();
             $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->decimal('price', 12, 2);
             $table->char('currency', 3)->default('USD');

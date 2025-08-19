@@ -59,3 +59,75 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Rey Tokyo E-commerce Platform
+
+A Laravel + Tailwind CSS fashion e-commerce site inspired by the Rey Theme Tokyo demo.
+
+## Features
+- Public landing page (no login required)
+- Hero banner, category banners (Men/Women/Kids), "Just In" section, featured collections, newsletter signup
+- Product/category seeding
+- User authentication (Laravel Breeze)
+- Product listing page
+
+## Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Datasoft-Bkash-AML/Rey-Tokyo.git
+cd Rey-Tokyo
+```
+
+### 2. Install dependencies
+```bash
+composer install
+npm install
+npm run build
+```
+
+### 3. Set up environment
+```bash
+cp .env.example .env
+# Edit .env and set your DB credentials
+```
+
+### 4. Generate app key
+```bash
+php artisan key:generate
+```
+
+### 5. Run migrations and seeders
+```bash
+php artisan migrate --seed
+```
+
+### 6. Start the development server
+```bash
+php artisan serve --host=0.0.0.0 --port=8000
+```
+
+Visit [http://localhost:8000/](http://localhost:8000/) to view the landing page.
+
+## Default Users
+- **Admin:** admin@rey-tokyo.com / admin1234
+- **Customer:** customer@rey-tokyo.com / customer1234
+
+---
+
+## Quick Start Script
+You can use the following script to automate setup:
+
+```
+#!/bin/bash
+set -e
+composer install
+npm install
+npm run build
+cp .env.example .env || true
+php artisan key:generate
+php artisan migrate:fresh --seed
+php artisan serve --host=0.0.0.0 --port=8000
+```
+
+Save as `run.sh`, make it executable (`chmod +x run.sh`), and run with `./run.sh`.
